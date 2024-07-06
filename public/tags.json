@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "title": "Noisy AI",
+      "description": "AI that generates creative content in various formats, but with a surprisingly sassy attitude.",
+      "tags": "AI Tools",
+      "image_url": "https://i.postimg.cc/vBPyMCSg/pexels-photo-6153354.webp",
+      "vote_count": 254
+    },
+    {
+      "id": 2,
+      "title": "Pixel Perfect",
+      "description": "Web design tool that helps you create pixel-perfect layouts with ease.",
+      "tags": "Web Apps",
+      "image_url": "https://i.postimg.cc/4d1dc82s/imac-apple-mockup-app-38544.jpg",
+      "vote_count": 187
+    },
+    {
+      "id": 3,
+      "title": "Gamify Your To-Do List",
+      "description": "Turn your daily tasks into a fun and engaging game to boost productivity.",
+      "tags": "Mobile Apps",
+      "image_url": "https://i.postimg.cc/1tyRyGmT/pexels-photo-3584994.webp",
+      "vote_count": 123
+    },
+    {
+      "id": 4,
+      "title": "Retro Arcade",
+      "description": "Emulator platform to play all your favorite classic arcade games in one place.",
+      "tags": "Games",
+      "image_url": "https://i.postimg.cc/4xhxP428/pexels-photo-3165335.jpg",
+      "vote_count": 98
+    },
+    {
+      "id": 5,
+      "title": "Social Distancing Dating App",
+      "description": "Connect with potential matches who share your love for staying safely indoors.",
+      "tags": "Mobile Apps",
+      "image_url": "https://i.postimg.cc/FFWFQk2W/pexels-photo-5426401.webp",
+      "vote_count": 72
+    },
+    {
+      "id": 6,
+      "title": "Code Sensei",
+      "description": "AI-powered coding assistant that helps you write cleaner and more efficient code.",
+      "tags": "Software",
+      "image_url": "https://i.postimg.cc/QxvXFGNc/pexels-photo-5926382.webp",
+      "vote_count": 51
+    }
+  ]

@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "image_url": "https://i.postimg.cc/13hT9zXG/pexels-photo-20870805.webp",
+      "name": "Smart Summarizer AI",
+      "tags": ["AI", "Productivity", "Text Summarization"]
+    },
+    {
+      "id": 2,
+      "image_url": "https://i.postimg.cc/WpDTzhNC/pexels-photo-3584994.webp",
+      "name": "Pixel Perfect Design Tool",
+      "tags": ["Design", "Web Development", "UI/UX"]
+      
+    },
+    {
+      "id": 3,
+      "image_url": "https://i.postimg.cc/cLWSFhRG/pexels-photo-7241428.webp",
+      "name": "Space Colony Simulator",
+      "tags": ["Game", "Simulation", "Strategy"]
+     
+    },
+    {
+      "id": 4,
+      "image_url": "https://i.postimg.cc/SKTbNpwm/pexels-photo-2004161.jpg",
+      "name": "Bug Squasher - Automated Bug Detection",
+      "tags": ["Software Development", "Testing", "AI"]
+     
+    }
+  ]
+  
