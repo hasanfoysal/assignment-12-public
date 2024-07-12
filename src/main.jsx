@@ -18,11 +18,14 @@ import Dashboard from './Components/Dashboard/Dashboard';
 // import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
 // import Cart from './Components/Dashboard/Cart/Cart';
 import MyProfile from './Components/Dashboard/MyProfile/MyProfile';
-import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
+// import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
+
 import MyProducts from './Components/Dashboard/MyProducts/MyProducts';
 import ManageUsers from './Components/Dashboard/ManageUsers/ManageUsers';
 import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AdminRoutes from './Routes/AdminRoutes';
+import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
 // eslint-disable-next-line no-unused-vars
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -49,32 +52,36 @@ const router = createBrowserRouter([
       },
       {
         path: '/viewdetails',
-        element:<Viewdetails></Viewdetails> ,
+        element:<PrivateRoutes><Viewdetails></Viewdetails> </PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/services')
       },
       {
         path: '/dashboard',
-        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes> ,
         children: [
           {
             path: 'profile',
-            element: <MyProfile></MyProfile>
+            element:<AdminRoutes> <MyProfile></MyProfile></AdminRoutes>
           },
+          // {
+          //   path: 'product',
+          //   element:<AdminRoutes><AddProduct></AddProduct></AdminRoutes> 
+          // },
           {
             path: 'product',
-            element: <AddProduct></AddProduct>
+            element: <AdminRoutes><AddProduct></AddProduct></AdminRoutes>
           },
           {
             path: 'products',
-            element: <MyProducts></MyProducts>
+            element: <AdminRoutes><MyProducts></MyProducts></AdminRoutes>
           },
           {
             path: 'manage',
-            element: <ManageUsers></ManageUsers>
+            element:<AdminRoutes><ManageUsers></ManageUsers></AdminRoutes> 
           },
           {
             path: 'users',
-            element: <AllUsers></AllUsers>
+            element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
           }
         ]
 

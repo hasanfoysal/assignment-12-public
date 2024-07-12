@@ -11,10 +11,10 @@ const Banner = () => {
   return (
     <Carousel>
       <div>
-        <img className="shadow-xl rounded-2xl" src={img1} />
+        <img className="shadow-xl rounded-2xl" src={img2} />
       </div>
       <div>
-        <img className="shadow-xl rounded-2xl"  src={img2} />
+        <img className="shadow-xl rounded-2xl"  src={img1} />
       </div>
       <div>
         <img className="shadow-xl rounded-2xl" src={img3} />

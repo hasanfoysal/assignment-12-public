@@ -15,7 +15,7 @@ const AllUsers = () => {
     //         const res = await axiosSecure.get('/users');
     //         return res.data;
 
-    //     }
+    //     }  
     // })
     const axiosSecure = useAxiosSecure();
     // eslint-disable-next-line no-unused-vars

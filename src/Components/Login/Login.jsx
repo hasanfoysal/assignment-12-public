@@ -11,7 +11,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const Login = () => {
 	const axiosPublic = useAxiosPublic();
 	const auth = getAuth(app);
-	const navigate = useNavigate();
+	const naviagte = useNavigate();
 	const provider = new GoogleAuthProvider();
 	const handleGoogleSignIn = () =>{
 		signInWithPopup(auth, provider)
@@ -36,7 +36,7 @@ const Login = () => {
 
 
     const {signIn} = useContext(AuthContext);
-	const naviagte = useNavigate();
+	// const naviagte = useNavigate();
 	const location = useLocation();
 
 	const from = location.state?.from?.pathname || '/home';
