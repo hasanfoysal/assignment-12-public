@@ -17,16 +17,16 @@ const AddProduct = () =>{
       const onSubmit = async(data) => {             
         console.log(data);
         // const imageFile = { image: data.image[0] }
-        const imageFile = { image: data.image[0] }
+        const imageFile = { image: data?.image_url[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
           headers: {
-            'Content-Type': 'multipart/from-data'
-          }
+            'content-type': 'multipart/form-data'
+          } 
         });
         if(res.data.success){
           const addItem= {
             ProductName : data.title,
-            ProductImage : res.data.data.image_url,
+            image_url : res.data.data.image_url,
             ProductDescription: data.description,
             OwnerName: data.name,
             OwnerEmail : data.email,
