@@ -26,6 +26,8 @@ import AllUsers from './Components/Dashboard/AllUsers/AllUsers';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AdminRoutes from './Routes/AdminRoutes';
 import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
+import UpdateProduct from './Components/Dashboard/UpdateProduct/UpdateProduct';
+// import updateItem from './Components/Dashboard/updateItem/updateItem';
 // eslint-disable-next-line no-unused-vars
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -78,6 +80,11 @@ const router = createBrowserRouter([
           {
             path: 'manage',
             element:<AdminRoutes><ManageUsers></ManageUsers></AdminRoutes> 
+          },
+          {
+            path: 'updateItem/:id',
+            element: <AdminRoutes><UpdateProduct></UpdateProduct></AdminRoutes>,
+            loader: ({params}) => fetch(`http://localhost:5000/addProduct/${params.id}`)
           },
           {
             path: 'users',

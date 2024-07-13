@@ -1,14 +1,16 @@
-/* eslint-disable no-undef */
-
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useForm } from "react-hook-form";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure"
+import { useLoaderData } from "react-router-dom";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 const image_hosting_key =import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
-
-const AddProduct = () =>{
-
+const UpdateProduct = () => {
+    const {
+        ProductName,
+        ProductImage ,
+        ProductDescription, _id
+      } = useLoaderData();
     const {
         register,
         handleSubmit,
@@ -34,11 +36,11 @@ const AddProduct = () =>{
 
 
           }
-          const addRes = await axiosSecure.post('/addProduct ', addItem);
+          const addRes = await axiosSecure.patch(`/addProduct/${_id} `, addItem);
           console.log(addRes.data) 
-          if(addRes.data.insertedId){
+          if(addRes.data.modifiedCount > 0){
             Swal.fire({
-              title: "Added successful!",
+              title: "Updated successful!",
               text: "You clicked the button!",
               icon: "success"
             });
@@ -53,22 +55,22 @@ const AddProduct = () =>{
 
 
       }
-
+    // console.log(item);
     return (
         <div>
-            <h1 className="text-4xl mx-auto text-black ml[200px] lg:ml-[200px] text-center btn btn-outline border-0 border-b-4 border-green-600  py-1 my-5 font-semibold">Add Products</h1>
+            <h1 className="text-4xl mx-auto text-black ml[100px] lg:ml-[200px] text-center btn btn-outline border-0 border-b-4 border-green-600  py-1 my-5 font-semibold">Update Products</h1>
             <div className="lg:ml-36 ml-24 ">
             <form  className="bg-slate-200 p-6 my-5"  onSubmit={handleSubmit(onSubmit)}>
       <label className="form-control w-full ">
   <div className="label">
     <span className="label-text text-xl font-semibold">Product Name</span>
   </div>
-  <input type="text" placeholder="Product Name"{...register('title',{required: true})} className="input input-bordered w-full " />
+  <input type="text" defaultValue={title}  placeholder="Product Name"{...register('title',{required: true})} className="input input-bordered w-full " />
 </label>
 
       <label className="form-control w-full my-3">
         <h1 className="text-xl font-semibold">Product Image</h1>
-      <input type="file"placeholder="Product Image"{...register('image_url',{required: true})} className="file-input file-input-bordered w-full" />
+      <input type="file"placeholder="Product Image"{...register('image_url',{required: true})} defaultValue={image_url} className="file-input file-input-bordered w-full" />
 
 </label>
 
@@ -76,14 +78,14 @@ const AddProduct = () =>{
   <div className="label">
     <span className="label-text text-xl font-semibold">Product Description</span>
   </div>
-  <input type="text" placeholder="Product Description"{...register('description',{required: true})} className="input input-bordered w-full " />
+  <input type="text" defaultValue={description} placeholder="Product Description"{...register('description',{required: true})} className="input input-bordered w-full " />
 </label>
 
 
 
 
       <button className="btn bg-green-600 text-white ml-24 lg:ml-36">
-        Add Product
+        Update Product
       </button>
     </form>
             </div>
@@ -91,4 +93,4 @@ const AddProduct = () =>{
     );
 };
 
-export default AddProduct; 
+export default UpdateProduct;

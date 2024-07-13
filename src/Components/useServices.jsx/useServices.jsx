@@ -7,7 +7,7 @@ const useServices = (asc) => {
     useEffect(() => {
         axiosSecure(`/trending?sort=${asc ? 'asc' : 'desc'}`)
         .then(res => setServices(res.data))
-    }, [asc])
+    }, [])
     return services;
    
 };
