@@ -1,10 +1,26 @@
 
+import { Link } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 
 const MyProfile = () => {
+    const { user } = useAuth()
     return (
-        <div>
-             <h1 className="text-4xl text-black ml-100px lg:ml-[200px] text-center btn btn-outline border-0 border-b-4 border-green-600  py-1 my-5 font-semibold">My Profile</h1>
+        <div className="card w-96 mx-auto mt-5 bg-base-100 shadow-xl">
+        <figure>
+          <img
+            src={user?.photoURL}
+            alt="Shoes"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">Name: {user?.displayName}</h2>
+          <p>Email: {user?.email}</p>
         </div>
+        <Link to='/dashboard/payment'><button className="text-white bg-green-600 my-6 mx-auto  shadow-lime-600 rounded-xl w-24 lg:w-32"> Membership Subscribe</button>
+        </Link>
+      </div>
+      
+      
     );
 };
 

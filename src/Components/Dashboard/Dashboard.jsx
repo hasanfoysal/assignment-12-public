@@ -28,9 +28,9 @@ const Dashboard = () => {
                 <li><NavLink to='/dashboard/products'>
                 <FaProductHunt></FaProductHunt>
                 My Products</NavLink></li>
-                <li><NavLink to='/dashboard/users'>
+                {/* <li><NavLink to='/dashboard/users'>
                 <FaUsers></FaUsers>
-                All Users</NavLink></li>
+                All Users</NavLink></li> */}
             </ul></div>
             <div className="flex-1">
                 <Outlet></Outlet>

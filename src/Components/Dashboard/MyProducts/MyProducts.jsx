@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const MyProducts = () => {
-    const [menu, refetch] = useMenu();
+    const [menu,] = useMenu();
     const axiosSecure = useAxiosSecure();
     const handleDeleteItem = (item) =>{
         Swal.fire({
@@ -23,7 +23,7 @@ const MyProducts = () => {
             const res = await axiosSecure.delete(`/addProduct/${item._id}`);
             // console.log(res.data);
             if(res.data.deletedCount > 0){
-                refetch();
+                // refetch();
                 Swal.fire({
                     title: "done!",
                     text: "You clicked the button!",
@@ -64,16 +64,16 @@ const MyProducts = () => {
                  <div className="avatar">
                    <div className="mask mask-squircle h-12 w-12">
                      <img
-                       src={item.image_url} />
+                       src={item.ProductImage} />
                    </div>
                  </div>
                </div>
              </td>
              <td>
-               {item.name}
+               {item.ProductName}
               
              </td>
-             {item.description}
+             {item.ProductDescription}
            
              <td>
               <Link to={`/dashboard/updateItem/${item._id}`}> <button  className="btn btn-sm bg-orange-500 ">

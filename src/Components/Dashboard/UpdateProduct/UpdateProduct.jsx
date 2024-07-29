@@ -6,11 +6,14 @@ import Swal from "sweetalert2";
 const image_hosting_key =import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const UpdateProduct = () => {
+  
     const {
-        ProductName,
-        ProductImage ,
-        ProductDescription, _id
+      // eslint-disable-next-line no-unused-vars
+      ProductName,
+      image_url ,
+      ProductDescription, _id
       } = useLoaderData();
+      console.log(_id)
     const {
         register,
         handleSubmit,
@@ -28,9 +31,9 @@ const UpdateProduct = () => {
         });
         if(res.data.success){
           const addItem= {
-            ProductName : data.title,
-            ProductImage : res.data.data.image_url,
-            ProductDescription: data.description,
+            ProductName : data.ProductName,
+            
+            ProductDescription: data.ProductDescription,
            
 
 
@@ -65,7 +68,7 @@ const UpdateProduct = () => {
   <div className="label">
     <span className="label-text text-xl font-semibold">Product Name</span>
   </div>
-  <input type="text" defaultValue={title}  placeholder="Product Name"{...register('title',{required: true})} className="input input-bordered w-full " />
+  <input type="text" defaultValue={ProductName}  placeholder="Product Name"{...register('title',{required: true})} className="input input-bordered w-full " />
 </label>
 
       <label className="form-control w-full my-3">
@@ -78,7 +81,7 @@ const UpdateProduct = () => {
   <div className="label">
     <span className="label-text text-xl font-semibold">Product Description</span>
   </div>
-  <input type="text" defaultValue={description} placeholder="Product Description"{...register('description',{required: true})} className="input input-bordered w-full " />
+  <input type="text" defaultValue={ProductDescription} placeholder="Product Description"{...register('description',{required: true})} className="input input-bordered w-full " />
 </label>
 
 

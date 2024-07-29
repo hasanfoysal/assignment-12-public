@@ -40,7 +40,7 @@ const AddProduct = () =>{
             Swal.fire({
               title: "Added successful!",
               text: "You clicked the button!",
-              icon: "success"
+              icon: "success" 
             });
             //show success popup
           }
@@ -68,7 +68,7 @@ const AddProduct = () =>{
 
       <label className="form-control w-full my-3">
         <h1 className="text-xl font-semibold">Product Image</h1>
-      <input type="file"placeholder="Product Image"{...register('image_url',{required: true})} className="file-input file-input-bordered w-full" />
+      <input type="file"{...register('image_url',{required: true})} className="file-input file-input-bordered w-full" />
 
 </label>
 
