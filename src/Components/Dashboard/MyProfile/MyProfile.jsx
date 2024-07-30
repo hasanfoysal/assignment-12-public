@@ -9,7 +9,7 @@ const MyProfile = () => {
         <figure>
           <img
             src={user?.photoURL}
-            alt="Shoes"
+            alt="Avatar"
           />
         </figure>
         <div className="card-body">

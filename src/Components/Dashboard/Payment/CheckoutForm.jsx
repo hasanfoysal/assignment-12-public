@@ -1,8 +1,11 @@
 /* eslint-disable no-undef */
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 
 const CheckoutForm = () => {
+    const [error, setError] = useState("")
     const stripe = useStripe();
     const elements = useElements();
 
@@ -18,9 +21,28 @@ const CheckoutForm = () => {
           return
           }
 
+          const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: "card",
+            card,
+          })
+          if (error) {
+            console.log("payment error", error)
+            setError(error.message)
+            
+          }
+           else {
+            console.log("payment method", paymentMethod)
+            Swal.fire({
+                title: "Payment successful!",
+                text: "You clicked the button!",
+                icon: "success" 
+              });
+            setError("")
+          }
+
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="ml-6">
             <CardElement
         options={{
           style: {
@@ -40,10 +62,11 @@ const CheckoutForm = () => {
       <button
         className="btn btn-sm btn-primary mt-3"
         type="submit"
-        disabled={!stripe || !clientSecret}
+        disabled={!stripe}
       >
         Pay
       </button>
+      <p className="text-red-600">{error}</p>
         </form>
     );
 };
