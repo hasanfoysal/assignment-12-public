@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import VoteCounter from "../VoteCounter/VoteCounter";
 
 
 const Feature = ({Resi}) => {
@@ -14,8 +15,13 @@ const Feature = ({Resi}) => {
         <div className="card-body">
           <h2 className="card-title text-3xl text-sky-800" >{name}</h2>
           <h2 className="text-2xl text-green-500">{tags}</h2>
-          <div className="card-actions justify-center">
+          <div className="card-actions">
+         <div>
          <Link to='/viewdetails'><button className="btn bg-sky-400 text-white">View Details</button></Link> 
+         </div>
+         <div>
+          <VoteCounter></VoteCounter>
+         </div>
           </div>
         </div>
         

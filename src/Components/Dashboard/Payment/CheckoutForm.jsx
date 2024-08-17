@@ -33,7 +33,7 @@ const CheckoutForm = () => {
            else {
             console.log("payment method", paymentMethod)
             Swal.fire({
-                title: "Payment successful!",
+                title: "Verified!",
                 text: "You clicked the button!",
                 icon: "success" 
               });

@@ -70,7 +70,7 @@ const ManageUsers = () => {
 
         </div>
         <div className="overflow-x-auto ml-5">
-<table className="table table-zebra w-full">
+<table className="table table-zebra w-full sm:table-row-group">
 {/* head */} 
 <thead>
   <tr>

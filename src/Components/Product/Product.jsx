@@ -18,7 +18,7 @@ const Product = ({Resi}) => {
           <h1>Description:{description}</h1>
 
         </div>
-        
+  
       </div>
     );
 };

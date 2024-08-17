@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+// import useAdmin from "../../Hooks/useAdmin";  
 
 const Navbar = () => {
 
   const {user, logOut} = useContext(AuthContext);
+  // const [isAdmin] = useAdmin();
   const handleLogOut = () =>{
     logOut()
-    .then(()=>{})
+    .then(()=>{}) 
     .catch(error => console.log(error));
 
   }
@@ -15,6 +17,9 @@ const Navbar = () => {
     <li className="text-white font-semibold  hover:text-green-500 text-xl"><NavLink to='/home'><a >Home</a></NavLink></li>
     <li className="text-green-white font-semibold italic hover:text-green-500 text-xl"><NavLink to='/product'><a >Products</a></NavLink></li>
     <li className="text-green-white font-semibold italic hover:text-green-500 text-xl"><NavLink to='/dashboard'><a >Dashboard</a></NavLink></li>
+    {/* {
+      user && isAdmin && <li><Link to='/dashboard/adminHome'>Dashboard</Link></li>
+    } */}
     {user ? (
             <>
               <div className="lg:tooltip lg:mt-4" data-tip={user?.displayName}>
@@ -34,7 +39,7 @@ const Navbar = () => {
                 <li className="btn bg-green-500 outline-none border-none text-white">Login</li>
               </Link>
             </>
-          )}
+          )} 
     {/* {
       user? <>
       <span>{user?.displayName}</span>

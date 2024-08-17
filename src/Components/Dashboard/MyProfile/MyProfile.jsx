@@ -5,7 +5,7 @@ import useAuth from "../../../Hooks/useAuth";
 const MyProfile = () => {
     const { user } = useAuth()
     return (
-        <div className="card w-96 mx-auto mt-5 bg-base-100 shadow-xl">
+        <div className="card w-52 lg:w-96 mx-auto mt-5 bg-base-100 shadow-xl">
         <figure>
           <img
             src={user?.photoURL}

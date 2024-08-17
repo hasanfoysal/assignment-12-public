@@ -31,6 +31,7 @@ const Products = () => {
             <form onSubmit={handleSearch} className="space-x-2">
                 <input className="bg-slate-200  p-1" type="text" name="search" id="" />
                 <input type="submit"className="btn rounded-full" value="search"/>
+                
 
             </form>
             <div className="grid lg:grid-cols-3 gap-4  mt-5 ">

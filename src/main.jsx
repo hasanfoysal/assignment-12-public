@@ -28,6 +28,7 @@ import AdminRoutes from './Routes/AdminRoutes';
 import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
 import UpdateProduct from './Components/Dashboard/UpdateProduct/UpdateProduct';
 import Payment from './Components/Dashboard/Payment/Payment';
+import AdminHome from './Components/Dashboard/AdminHome/AdminHome';
 // import updateItem from './Components/Dashboard/updateItem/updateItem';
 // eslint-disable-next-line no-unused-vars
 const queryClient = new QueryClient();
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
           {
             path: 'users',
             element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+          },
+          {
+            path: 'adminHome',
+            element: <AdminRoutes><AdminHome></AdminHome></AdminRoutes>,
           },
           {
             path: 'payment',
