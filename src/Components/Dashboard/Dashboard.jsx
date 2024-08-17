@@ -1,12 +1,18 @@
 import { FaAd, FaHome, FaProductHunt, FaUser, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
 
     const [isAdmin] = useAdmin();
     return (
         <div className="flex p-20 lg:p-32">
+            <Helmet>
+                <title>
+                    Products Hunt || Dashboard
+                </title>
+            </Helmet>
             <div className="lg:w-64 min-h-screen w-44 bg-orange-400"> <ul className="menu">
                 {
                     isAdmin? <>

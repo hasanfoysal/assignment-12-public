@@ -7,7 +7,7 @@ const FamousProducts = () => {
     const [asc, setAsc] = useState(false);
     const [Resis, setResis] = useState([]);
     useEffect( () =>{
-        // fetch('http://localhost:5000/trending')
+        // fetch('https://final-assignment-server-two.vercel.app/trending')
         // .then(res => res.json())
         // .then(data => setResis(data));
         axiosSecure(`/trending?sort=${asc ? 'asc' : 'desc'}`)

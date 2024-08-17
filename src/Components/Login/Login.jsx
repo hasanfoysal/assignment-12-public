@@ -74,7 +74,7 @@ const Login = () => {
     return (
         <div>
              <h1 className="text-center font-bold text-3xl pt-15 md:pt-15 lg:pt-20">PLEASE LOGIN!</h1>
-            <div onSubmit={handleLogin} className="w-full max-w-md mx-auto my-6  p-8 space-y-3 rounded-xl bg-gray-500 text-white">
+            <div onSubmit={handleLogin} className="w-full max-w-md mx-auto my-6  p-8 space-y-3 rounded-xl bg-gray-500 text-black">
 	<h1 className="text-2xl font-bold text-center">Login</h1>
 	<form noValidate="" action="" className="space-y-6">
 		<div className="space-y-1 text-sm">

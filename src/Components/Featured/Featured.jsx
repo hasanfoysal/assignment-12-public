@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import Feature from "../Feature/Feature";
+import { Helmet } from "react-helmet-async";
 
 
 const Featured = () => {
     const [Resis, setResis] = useState([]);
     useEffect( () =>{
-        fetch('http://localhost:5000/services')
+        fetch('https://final-assignment-server-two.vercel.app/services')
         .then(res => res.json())
         .then(data => setResis(data));
 
@@ -13,7 +14,9 @@ const Featured = () => {
     return (
         
         <div className=" lg:my-12 my-5  ">
-           
+           <Helmet>
+            <title>Products Hunt || Featureds Products</title>
+           </Helmet>
             <h1 className="text-4xl text-black ml[200px] lg:ml-[400px] text-center btn btn-outline border-0 border-b-4 border-green-600  py-1 my-5 font-semibold">Featured Products</h1>
             
             

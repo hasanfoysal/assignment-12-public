@@ -29,6 +29,7 @@ import AddProduct from './Components/Dashboard/AddProduct/AddProduct';
 import UpdateProduct from './Components/Dashboard/UpdateProduct/UpdateProduct';
 import Payment from './Components/Dashboard/Payment/Payment';
 import AdminHome from './Components/Dashboard/AdminHome/AdminHome';
+import { HelmetProvider } from 'react-helmet-async';
 // import updateItem from './Components/Dashboard/updateItem/updateItem';
 // eslint-disable-next-line no-unused-vars
 const queryClient = new QueryClient();
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       {
         path: '/viewdetails',
         element:<PrivateRoutes><Viewdetails></Viewdetails> </PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('https://final-assignment-server-two.vercel.app/services')
       },
       {
         path: '/dashboard',
@@ -86,7 +87,7 @@ const router = createBrowserRouter([
           {
             path: 'updateItem/:id',
             element: <AdminRoutes><UpdateProduct></UpdateProduct></AdminRoutes>,
-            loader: ({params}) => fetch(`http://localhost:5000/addProduct/${params.id}`)
+            loader: ({params}) => fetch(`https://final-assignment-server-two.vercel.app/addProduct/${params.id}`)
           },
           {
             path: 'users',
@@ -109,6 +110,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <HelmetProvider>
    <AuthProvider>
     <QueryClientProvider client={queryClient}>
    <div className="lg:max-w-6xl max-w-xl md:max-w-3xl mx-auto ">
@@ -116,5 +118,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </div>
     </QueryClientProvider>
    </AuthProvider>
+   </HelmetProvider>
   </React.StrictMode>
 )
